@@ -3,25 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Numbers</title>
+    <title>Prime Numbers</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1 class="heading">Print the Odd Numbers from 1 to 100 </h1>
-
+    <h4 class="heading">Print the Prime Numbers</h4>
 
     <script>
 
-        document.write("<table class='table table-bordered'>")
-        for(let i=0;i<=100;i++){
-           document.write("<tr>")
-            if(i % 2 !=0) {
-                document.write("<td>"+i+"</td");
+        var num = 100;
+        document.write("<h3>Prime numbers between 1 and " + num + ":</h3>")
+        for (let i=2; i<=num; i++) {
+            flag = true;
+            for (let j=2; j<=i-1; j++) {
+                if (i % j == 0) {
+                    flag = false;
+                    break;
+                }
             }
-            document.write("</tr>")
+            if (flag) {
+                document.write(i + "<br>")
+            }
         }
-        document.write("</table>")
-    </script>
 
+    </script>
+    
 </body>
 </html>
